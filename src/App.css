@@ -2,21 +2,3 @@
   text-align: center;
 }
 
-div.App nav.navbar{
-  background-color: pink;
-}
-div.App nav.navbar a.navbar-brand img {
-  width: 200px;
-  height: auto;
-}
-
-div.App nav.navbar div.container-fluid div.navbar-nav {
- width: 90%;  
-}
-
-div.App nav.navbar div.container-fluid div.navbar-nav a.nav-link{
-   margin-left: 10%;
-}
-div.App nav.navbar div.container-fluid div.navbar-nav a.nav-link img#logoInstagram{
-  height: 2.5rem;
-}

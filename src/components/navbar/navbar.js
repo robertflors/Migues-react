@@ -1,32 +1,29 @@
-// import React from 'react'
+import React from 'react';
+import './Navbar.css';
+import Cart from '../Cart/Cart';
 
-// function navbar (props){
-//   return(
-// <div>
-//     {/* <nav class="navbar navbar-light bg-light">
-//         <div class="container-fluid">
-//             <a class="navbar-brand" href="#">
-//                 <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24"
-//                     class="d-inline-block align-text-top" />
-//                 Bootstrap
-//             </a>
-//         </div>
-//     </nav> */}
-//     <h1>SI FUNCIONA</h1>
-// </div>
-// );
-// }
-
-// export default navbar
-
-import React, { Component } from 'react'
-
-export default class navbar extends Component {
-    render() {
-        return (
-            <div>
-                <h1>funciona</h1>
+function Navbar (){
+return(
+    <nav className="navbar navbar-expand-lg navbar-light">
+        <div className="container-fluid">
+            <a className="navbar-brand" href="#">
+                <img src="img/logoNegro.PNG" className="d-inline-block align-text-top" />
+            </a>
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div className="navbar-nav d-flex flex-row-reverse bd-highlight">
+                    <a className="nav-link" href="#"><img src="img/instagram.png" alt="" id="logoInstagram" /></a>
+                    {/* AQUI SE IMPORTA EL COMPONENTE CART */}
+                    <Cart />
+                </div>
             </div>
-        )
-    }
+        </div>
+    </nav>
+);
 }
+
+export default Navbar;

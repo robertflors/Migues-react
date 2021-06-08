@@ -1,0 +1,9 @@
+ul{
+    list-style: none;
+    width: 100%;
+}
+ ul li{
+     height: 100px;
+     background-color: powderblue;
+     margin-top: 20px;
+ }
