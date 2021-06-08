@@ -1,9 +1,18 @@
 ul{
     list-style: none;
     width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
  ul li{
      height: 100px;
      background-color: powderblue;
      margin-top: 20px;
+     width: 90vw;
  }
+
+
+
+ 

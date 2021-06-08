@@ -1,13 +1,14 @@
 import React from 'react'
 import './ListaProductos.css'
+import Productos from '../Productos/Productos'
 
 function ListaProductos() {
     return (
         <div>
             <ul>
-                <li>Remeras</li>
-                <li>Totebags</li>
-                <li>Stickers</li>
+                <Productos name="Remeras"/>
+                <Productos name="Stickers"/>
+                <Productos name="Tote Bags"/>
             </ul>
             
         </div>
