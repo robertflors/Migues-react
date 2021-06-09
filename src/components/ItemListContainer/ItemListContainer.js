@@ -1,8 +1,8 @@
 import React from 'react'
-import './ListaProductos.css'
+import './ItemListContainer.css'
 import Productos from '../Productos/Productos'
 
-function ListaProductos() {
+function ItemListContainer() {
     return (
         <div>
             <ul>
@@ -15,4 +15,4 @@ function ListaProductos() {
     )
 }
 
-export default ListaProductos
+export default ItemListContainer

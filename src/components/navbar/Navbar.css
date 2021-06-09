@@ -16,3 +16,16 @@ nav.navbar div.container-fluid div.navbar-nav a.nav-link{
 nav.navbar div.container-fluid div.navbar-nav a.nav-link img#logoInstagram{
     height: 2.5rem;
   }
+
+nav.navbar div.container-fluid div.navbar-nav div.dropdown a#dropdownMenuLink{
+  background-color: powderblue;
+  border-color: black;
+  margin-top: 10%;
+  outline: none;
+}  
+
+nav.navbar div.container-fluid div.navbar-nav div.dropdown ul.dropdown-menu a.navbar__botonCategorias{
+  background-color: pink;
+  margin-top: 10px;
+
+}

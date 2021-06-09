@@ -6,7 +6,7 @@ ul{
     flex-direction: column;
     align-items: center;
 }
- ul li{
+ ul li.listaProductos{
      height: 100px;
      background-color: powderblue;
      margin-top: 20px;
