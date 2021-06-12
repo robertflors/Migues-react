@@ -7,7 +7,7 @@ return (
 <li className="listaProductos">
     <button class="btn" type="button">
         <h3>{props.name}</h3>
-        <ItemCount />
+        <ItemCount stock={props.stock} name={props.name}/>
     </button>
 </li>
 
