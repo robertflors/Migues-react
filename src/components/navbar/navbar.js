@@ -15,9 +15,12 @@ return(
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav d-flex flex-row-reverse bd-highlight">
+                
                 <a className="nav-link" href="#"><img src="img/instagram.png" alt="" id="logoInstagram" /></a>
+
                 {/* AQUI SE IMPORTA EL COMPONENTE CART */}
                 <Cart />
+
                 <div className="dropdown">
                     <a className="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                         data-bs-toggle="dropdown" aria-expanded="false">
