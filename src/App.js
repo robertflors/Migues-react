@@ -1,16 +1,25 @@
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import Home from './views/Home/Home';
+import ItemDetailContainer from './views/ItemDetailContainer/ItemDetailContainer'
 
 
 
 function App() {
 return (
-<div className="App"> 
-  <Navbar />
-  <ItemListContainer greeting="Hola, estos son los productos:"/>
-   
-</div>
+<Router>
+  <div className="App">
+    <Navbar />
+    <Switch>
+      <Route path='/' exact component={Home} />
+      <Route path='/detalles/:id' component={ItemDetailContainer} />
+
+    </Switch>
+    
+  </div>
+</Router>
 );
 }
 

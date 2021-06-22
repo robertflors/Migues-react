@@ -1,29 +1,28 @@
 import React, {useEffect, useState} from 'react';
 import Item from '../Item/Item';
 import './ItemList.css'
+import axios from 'axios';
+
 
 function ItemList() {
     const [productos, setProductos] = useState([]);
 
     useEffect(() => {
-        const promesa = new Promise((resolve, reject)=>{
-            setTimeout(()=>{
-                resolve([
-                    {id: 1 , title: "remera", stock: 5, description: "remera de algodón, con diseño", price: 500, pictureUrl: "https://saborstore.com/wp-content/uploads/2019/10/Remera-SkateCho-Rosa-Negro-Frente.jpg"},
-                    {id: 2 , title: "sticker", stock: 10, description: "lote de stickers pequeños", price: 100, pictureUrl: "https://holdit.com/en/wp-content/uploads/sites/2/2020/10/14842_1.jpg"},
-                    {id: 3 , title: "tote bag", stock: 4, description: "tote bag con diseño", price: 600, pictureUrl: "https://cdn.shopify.com/s/files/1/1722/0531/products/modern-love-tote-bicycle_1024x1024.jpg?v=1571439091"}
-                ]);
-            }, 2000)
-        });
-        promesa.then((resultado)=>{
-            setProductos(resultado);
-        });       
-      
+        setTimeout(()=>{
+            axios('json/Detail.json')
+           .then(respuesta => setProductos(respuesta.data));    
+        }, 2000);     
     }, []);
-    console.log(productos);
+    console.log("detalles" , productos);
     return (
         <div className="itemList">
-            {productos.map(item => <Item key={item.id} item={item}/>)}
+            {productos.map((item) => {
+                return (<div key={item.id}>
+                        
+                            <Item item={item}/>
+                        
+                        </div>)
+            })}
         </div>
     );
 }
