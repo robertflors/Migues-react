@@ -1,59 +1,33 @@
-// import axios from 'axios';
-// import React, {useEffect , useState} from 'react';
-// import { Link } from 'react-router-dom';
+import React from 'react'
+import {Card} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
-// function ItemDetailContainer() {
-//     const [detail, setDetail] = useState([]);
+function ItemDetail( {item}) {
+    return (
+        <div className="container d-flex justify-content-center mt-5">
+            <Card style={{ width: '18rem' }}>
+        <Card.Img variant="top" src={item.pictureUrl} />
+        <Card.Body>
+            <Card.Title>{item.title}</Card.Title>
+            <Card.Text>
+                {item.description}                             
+            </Card.Text>   
+            <p>{item.price}</p>
 
-//     useEffect(() => {
-//         setTimeout(()=>{
-//             axios('json/Detail.json')
-//            .then(respuesta => setDetail(respuesta.data));    
-//         }, 2000);     
-//     }, []);
-//     console.log("detalles" , detail);
-
-//     return (
-        
-//         <div>
-//             {detail.map((item) => {
-//                 return (
-//                     <div key={item.id}>
-//                         <Link to={`/detalles/${item.id}`}>
-//                             <Item data={item} />
-//                         </Link>    
-//                     </div>    
-//                 )
-//             })
-
-//             }                               
-//         </div>
-//     )
-// }
-
-// export default ItemDetailContainer
-
-// import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
-
-// function ItemDetail( { match }) {
-//     let itemID = match.params.id;
-//     const [items, setItems] = useState([]);
-
-//     useEffect(() => {
-//             axios('json/Detail.json')
-//            .then(respuesta => setItems(respuesta.data));    
-//     }, []);
-
-//     let itemDetallado = items.filter(item => item === itemID);
-//     console.log("detallado" , itemDetallado);
-//     return (
-//         <div>
-//             detalle de item
             
-//         </div>
-//     )
-// }
+        </Card.Body>
+    </Card>
 
-// export default ItemDetail
+    <div className="container">{item.detail}</div>
+
+    <Link to={`/`}>
+    volver
+    </Link>
+            
+        </div>
+    )
+}
+
+export default ItemDetail
+
