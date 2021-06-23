@@ -5,8 +5,8 @@
     "pictureUrl": "https://saborstore.com/wp-content/uploads/2019/10/Remera-SkateCho-Rosa-Negro-Frente.jpg",
     "stock": "5",
     "description": "remera de algodón, con diseño",
-    "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque quidem voluptas consectetur quo temporibus aliquid quasi autem. Sed consequuntur possimus, eaque tenetur, iste, sapiente accusamus et explicabo corrupti quis nam?Voluptate voluptas quos numquam repudiandae animi sunt, a facere dolorem pariatur quae nam blanditiis ipsam nemo nostrum eum, totam, enim tenetur optio? Itaque natus perferendis cupiditate assumenda hic magni iste.Consectetur atque consequatur placeat incidunt voluptates libero temporibus quasi dolor, alias saepe, pariatur, maiores delectus voluptate sit! Iste iusto quae earum sed dolorem quam blanditiis maiores perspiciatis. Ducimus, sunt quam."
-   
+    "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque quidem voluptas consectetur quo temporibus aliquid quasi autem. Sed consequuntur possimus, eaque tenetur, iste, sapiente accusamus et explicabo corrupti quis nam?Voluptate voluptas quos numquam repudiandae animi sunt, a facere dolorem pariatur quae nam blanditiis ipsam nemo nostrum eum, totam, enim tenetur optio? Itaque natus perferendis cupiditate assumenda hic magni iste.Consectetur atque consequatur placeat incidunt voluptates libero temporibus quasi dolor, alias saepe, pariatur, maiores delectus voluptate sit! Iste iusto quae earum sed dolorem quam blanditiis maiores perspiciatis. Ducimus, sunt quam.",
+    "category": "remeras"
  
 },
 {
@@ -16,8 +16,8 @@
     "pictureUrl": "https://holdit.com/en/wp-content/uploads/sites/2/2020/10/14842_1.jpg",
     "stock": "10",
     "description": "lote de stickers pequeños",
-    "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque quidem voluptas consectetur quo temporibus aliquid quasi autem. Sed consequuntur possimus, eaque tenetur, iste, sapiente accusamus et explicabo corrupti quis nam?Voluptate voluptas quos numquam repudiandae animi sunt, a facere dolorem pariatur quae nam blanditiis ipsam nemo nostrum eum, totam, enim tenetur optio? Itaque natus perferendis cupiditate assumenda hic magni iste.Consectetur atque consequatur placeat incidunt voluptates libero temporibus quasi dolor, alias saepe, pariatur, maiores delectus voluptate sit! Iste iusto quae earum sed dolorem quam blanditiis maiores perspiciatis. Ducimus, sunt quam."   
- 
+    "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque quidem voluptas consectetur quo temporibus aliquid quasi autem. Sed consequuntur possimus, eaque tenetur, iste, sapiente accusamus et explicabo corrupti quis nam?Voluptate voluptas quos numquam repudiandae animi sunt, a facere dolorem pariatur quae nam blanditiis ipsam nemo nostrum eum, totam, enim tenetur optio? Itaque natus perferendis cupiditate assumenda hic magni iste.Consectetur atque consequatur placeat incidunt voluptates libero temporibus quasi dolor, alias saepe, pariatur, maiores delectus voluptate sit! Iste iusto quae earum sed dolorem quam blanditiis maiores perspiciatis. Ducimus, sunt quam.",   
+    "category":"stickers"
 },
 {
     "title": "tote bag",
@@ -26,6 +26,6 @@
     "pictureUrl": "https://cdn.shopify.com/s/files/1/1722/0531/products/modern-love-tote-bicycle_1024x1024.jpg?v=1571439091",
     "stock": "4",
     "description": "tote bag con diseño",
-    "detail":"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque quidem voluptas consectetur quo temporibus aliquid quasi autem. Sed consequuntur possimus, eaque tenetur, iste, sapiente accusamus et explicabo corrupti quis nam? Voluptate voluptas quos numquam repudiandae animi sunt, a facere dolorem pariatur quae nam blanditiis ipsam nemo nostrum eum, totam, enim tenetur optio? Itaque natus perferendis cupiditate assumenda hic magni iste.Consectetur atque consequatur placeat incidunt voluptates libero temporibus quasi dolor, alias saepe, pariatur, maiores delectus voluptate sit! Iste iusto quae earum sed dolorem quam blanditiis maiores perspiciatis. Ducimus, sunt quam."
-
+    "detail":"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque quidem voluptas consectetur quo temporibus aliquid quasi autem. Sed consequuntur possimus, eaque tenetur, iste, sapiente accusamus et explicabo corrupti quis nam? Voluptate voluptas quos numquam repudiandae animi sunt, a facere dolorem pariatur quae nam blanditiis ipsam nemo nostrum eum, totam, enim tenetur optio? Itaque natus perferendis cupiditate assumenda hic magni iste.Consectetur atque consequatur placeat incidunt voluptates libero temporibus quasi dolor, alias saepe, pariatur, maiores delectus voluptate sit! Iste iusto quae earum sed dolorem quam blanditiis maiores perspiciatis. Ducimus, sunt quam.",
+    "category":"totebags"
 }]

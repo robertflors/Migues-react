@@ -19,11 +19,14 @@ function ItemDetail( {item}) {
         </Card.Body>
     </Card>
 
-    <div className="container">{item.detail}</div>
+    <div className="container">
+        {item.detail}
+         <Link to={`/`}>
+           <p className="mt-5">volver</p> 
+         </Link>    
+    </div>
 
-    <Link to={`/`}>
-    volver
-    </Link>
+   
             
         </div>
     )

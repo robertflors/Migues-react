@@ -15,7 +15,7 @@ function ItemDetailContainer( { match }) {
     console.log("detallado" , itemDetallado);
     return (
         <div>
-            <h1>detalle de item</h1>
+            <h3>detalle de item</h3>
             {itemDetallado.map((item) => {
                 return (<div key={item.id}>
                         

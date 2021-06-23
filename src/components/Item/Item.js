@@ -2,6 +2,7 @@ import React from 'react';
 import {Card} from 'react-bootstrap';
 import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
+import './Item.css'
 
 
 
@@ -16,7 +17,7 @@ return (
                 {item.description}                             
             </Card.Text>
                 <Link to={`/detalles/${item.id}`}>
-                    <button className="btn">+ info</button>
+                    <button className="btn botonInfo">+ info</button>
                 </Link>    
             <p>{item.price}</p>
 
