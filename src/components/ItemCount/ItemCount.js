@@ -1,6 +1,9 @@
 
 import React, { useState } from 'react';
 import './ItemCount.css'
+import menos from './img/menos.png';
+import mas from './img/mas.png';
+import carrito from './img/carrito.png';
 
 function ItemCount({name, stock}) {
     const [cant, setCant] = useState(1);
@@ -23,19 +26,19 @@ function ItemCount({name, stock}) {
             <div className="agrupacionBotonesCompras">
                 {/* botón de menos */}
             {cant < 1 ? 
-                <button className="minimo btn"><img src="img/menos.png" alt="menor que" class="menorQue"/></button>
-            :   <button onClick={restarProducto} className="btn botonCantidad"><img src="img/menos.png" alt="menor que" class="menorQue"/></button>     
+                <button className="minimo btn"><img src={menos} alt="menor que" class="menorQue"/></button>
+            :   <button onClick={restarProducto} className="btn botonCantidad"><img src={menos} alt="menor que" class="menorQue"/></button>     
             }
                 {/* botón para agregar al carrito */}
             {cant < 1 ?
-                 <button className="minimo btn"><img src="img/carrito.png" alt="carrito de compras" className="agregarAlCarrito" /></button> 
-            :     <button onClick={onAdd} className="botonAgregarAlCarrito btn"><img src="img/carrito.png" alt="carrito de compras" className="agregarAlCarrito"/></button>
+                 <button className="minimo btn"><img src={carrito} alt="carrito de compras" className="agregarAlCarrito" /></button> 
+            :     <button onClick={onAdd} className="botonAgregarAlCarrito btn"><img src={carrito} alt="carrito de compras" className="agregarAlCarrito"/></button>
             
             }
                 {/* botón de más */}
             {cant >= stock ?                                                
-                 <button className="maximo btn"><img src="img/mas.png" alt="mayor que" class="mayorQue"/></button>
-            :    <button onClick={sumarProducto} className="btn botonCantidad"><img src="img/mas.png" alt="mayor que" class="mayorQue"/></button>          
+                 <button className="maximo btn"><img src={mas} alt="mayor que" class="mayorQue"/></button>
+            :    <button onClick={sumarProducto} className="btn botonCantidad"><img src={mas} alt="mayor que" class="mayorQue"/></button>          
             }
             </div>    
                  

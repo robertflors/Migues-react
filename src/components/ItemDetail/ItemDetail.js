@@ -1,6 +1,7 @@
 import React from 'react'
 import {Card} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import ItemCount from '../ItemCount/ItemCount';
 
 
 function ItemDetail( {item}) {
@@ -13,10 +14,11 @@ function ItemDetail( {item}) {
             <Card.Text>
                 {item.description}                             
             </Card.Text>   
-            <p>{item.price}</p>
-
+            <p>{item.price}</p>           
             
         </Card.Body>
+        <ItemCount stock={item.stock} name={item.title}/>
+
     </Card>
 
     <div className="container">
