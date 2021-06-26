@@ -1,19 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import Item from '../Item/Item';
 import './ItemList.css'
-import axios from 'axios';
 
 
-function ItemList() {
-    const [productos, setProductos] = useState([]);
 
-    useEffect(() => {
-        setTimeout(()=>{
-            axios('json/Detail.json')
-           .then(respuesta => setProductos(respuesta.data));    
-        }, 2000);     
-    }, []);
-    console.log("detalles" , productos);
+function ItemList( {productos} ) {
+    
     return (
         <div className="itemList">
             {productos.map((item) => {
