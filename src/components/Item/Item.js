@@ -23,7 +23,7 @@ return (
 
             
             
-            <ItemCount stock={item.stock} name={item.title}/>
+            {/* <ItemCount stock={item.stock} name={item.title}/> */}
             
         </Card.Body>
     </Card>
