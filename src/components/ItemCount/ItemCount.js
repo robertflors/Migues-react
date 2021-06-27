@@ -5,7 +5,7 @@ import menos from './img/menos.png';
 import mas from './img/mas.png';
 import carrito from './img/carrito.png';
 
-function ItemCount({name, stock}) {
+function ItemCount({stock, onAdd}) {
     const [cant, setCant] = useState(1);
 
     const sumarProducto = () => {
@@ -16,9 +16,9 @@ function ItemCount({name, stock}) {
         setCant(cant - 1);
     }
 
-    const onAdd = () => {
-        alert(`agregaste ${cant} ${name}`);
-    }
+    // const onAdd = () => {
+    //     ;
+    // }
 
     return (
         <div>
@@ -32,7 +32,7 @@ function ItemCount({name, stock}) {
                 {/* botón para agregar al carrito */}
             {cant < 1 ?
                  <button className="minimo btn"><img src={carrito} alt="carrito de compras" className="agregarAlCarrito" /></button> 
-            :     <button onClick={onAdd} className="botonAgregarAlCarrito btn"><img src={carrito} alt="carrito de compras" className="agregarAlCarrito"/></button>
+            :     <button onClick={()=>onAdd(cant)} className="botonAgregarAlCarrito btn"><img src={carrito} alt="carrito de compras" className="agregarAlCarrito"/></button>
             
             }
                 {/* botón de más */}

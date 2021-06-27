@@ -1,10 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Card} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
+import '../Item/Item.css';
+
 
 
 function ItemDetail( {item}) {
+    const [cant, setCant] = useState(0);
+
+    const onAdd = (e) => {
+        setCant(e);       
+    }
+
+    
+    
     return (
         <div className="container d-flex justify-content-center mt-5">
             <Card style={{ width: '18rem' }}>
@@ -17,7 +27,12 @@ function ItemDetail( {item}) {
             <p>{item.price}</p>           
             
         </Card.Body>
-        <ItemCount stock={item.stock} name={item.title}/>
+        {cant === 0 ? 
+            <ItemCount stock={item.stock} name={item.title} onAdd={onAdd}/>
+        :   <Link to={'/cart'}>
+                <button className="btn botonInfo">finalizar compra ({cant} {item.title})</button>         
+            </Link> }
+       
 
     </Card>
 
