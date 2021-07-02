@@ -6,15 +6,15 @@ import '../Item/Item.css';
 
 
 
+
 function ItemDetail( {item}) {
-    const [cant, setCant] = useState(0);
+
+        const [cant, setCant] = useState(0);
 
     const onAdd = (e) => {
         setCant(e);       
     }
-
-    
-    
+       
     return (
         <div className="container d-flex justify-content-center mt-5">
             <Card style={{ width: '18rem' }}>
@@ -28,7 +28,7 @@ function ItemDetail( {item}) {
             
         </Card.Body>
         {cant === 0 ? 
-            <ItemCount stock={item.stock} name={item.title} onAdd={onAdd}/>
+            <ItemCount stock={item.stock} item={item} onAdd={onAdd}/>
         :   <Link to={'/cart'}>
                 <button className="btn botonInfo">finalizar compra ({cant} {item.title})</button>         
             </Link> }

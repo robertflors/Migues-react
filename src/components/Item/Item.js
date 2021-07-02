@@ -1,6 +1,5 @@
 import React from 'react';
 import {Card} from 'react-bootstrap';
-import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
 import './Item.css'
 
@@ -20,10 +19,6 @@ return (
                     <button className="btn botonInfo">+ info</button>
                 </Link>    
             <p>{item.price}</p>
-
-            
-            
-            {/* <ItemCount stock={item.stock} name={item.title}/> */}
             
         </Card.Body>
     </Card>

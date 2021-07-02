@@ -7,11 +7,14 @@ import ItemDetailContainer from './views/ItemDetailContainer/ItemDetailContainer
 import Category from './views/Category/Category'
 import Cart from './views/Cart/Cart';
 
+import {CartProvider} from './context/CartContext';
+
 
 
 function App() {
 return (
 <Router>
+  <CartProvider>
   <div className="App">
     <Navbar />
     <Switch>
@@ -23,6 +26,7 @@ return (
     </Switch>
     
   </div>
+  </CartProvider>
 </Router>
 );
 }

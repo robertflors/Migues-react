@@ -1,12 +1,16 @@
 
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './ItemCount.css'
 import menos from './img/menos.png';
 import mas from './img/mas.png';
 import carrito from './img/carrito.png';
 
-function ItemCount({stock, onAdd}) {
+import { CartContext } from '../../context/CartContext';
+
+
+function ItemCount({stock, onAdd, item}) {
     const [cant, setCant] = useState(1);
+    const contexto = useContext(CartContext);
 
     const sumarProducto = () => {
         setCant(cant + 1);
@@ -16,9 +20,10 @@ function ItemCount({stock, onAdd}) {
         setCant(cant - 1);
     }
 
-    // const onAdd = () => {
-    //     ;
-    // }
+    const agregarAlCarrito = (cant) => {
+        contexto.addItem({item} , cant);
+    }
+
 
     return (
         <div>
@@ -32,7 +37,7 @@ function ItemCount({stock, onAdd}) {
                 {/* botón para agregar al carrito */}
             {cant < 1 ?
                  <button className="minimo btn"><img src={carrito} alt="carrito de compras" className="agregarAlCarrito" /></button> 
-            :     <button onClick={()=>onAdd(cant)} className="botonAgregarAlCarrito btn"><img src={carrito} alt="carrito de compras" className="agregarAlCarrito"/></button>
+            :    <button onClick={()=> {onAdd(cant); agregarAlCarrito(cant)}} className="botonAgregarAlCarrito btn"><img src={carrito} alt="carrito de compras" className="agregarAlCarrito"/></button>
             
             }
                 {/* botón de más */}
