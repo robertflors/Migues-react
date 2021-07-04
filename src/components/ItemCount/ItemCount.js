@@ -21,7 +21,7 @@ function ItemCount({stock, onAdd, item}) {
     }
 
     const agregarAlCarrito = (cant) => {
-        contexto.addItem({item} , cant);
+        contexto.addItem(item , cant);
     }
 
 

@@ -12,7 +12,6 @@ function ItemListContainer(prop) {
            .then(respuesta => setProductos(respuesta.data));    
         }, 2000);     
     }, []);
-    console.log("detalles" , productos);
     return (
         <div>
             <h1>{prop.greeting}</h1>

@@ -12,8 +12,7 @@ function Category( {match} ) {
     }, []);
 
     let categoriaSeleccionada = category.filter(item => item.category === categoryId);
-    console.log("detallado" , categoriaSeleccionada);
-    
+   
     return (
         <div>
             <h3>Categoría:</h3>

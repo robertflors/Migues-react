@@ -12,7 +12,7 @@ function ItemDetailContainer( { match }) {
     }, []);
 
     let itemDetallado = items.filter(item => item.id === itemID);
-    console.log("detallado" , itemDetallado);
+
     return (
         <div>
             <h3>detalle de item</h3>
