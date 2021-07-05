@@ -1,6 +1,6 @@
 import React from 'react';
 import './Navbar.css';
-import Cart from '../Cart/Cart';
+import CartWidget from '../CartWidget/CartWidget';
 import { Link } from 'react-router-dom'
 
 function Navbar (){
@@ -17,10 +17,10 @@ return(
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav d-flex flex-row-reverse bd-highlight">
                 
-                <a className="nav-link" href="https://www.instagram.com/migueily/"><img src="img/instagram.png" alt="" id="logoInstagram" /></a>
+                <a className="nav-link" href="https://www.instagram.com/migueily/"><img src="img/instagram.png" alt="instagram" id="logoInstagram" /></a>
 
-                {/* AQUI SE IMPORTA EL COMPONENTE CART */}
-                <Cart />
+                {/* AQUI SE IMPORTA EL COMPONENTE CART WIDGET */}
+                <CartWidget />
 
                 <div className="dropdown">
                     <Link className="btn dropdown-toggle" to="/" role="button" id="dropdownMenuLink"

@@ -1,9 +1,9 @@
 
 import React, { useState, useContext } from 'react';
 import './ItemCount.css'
-import menos from './img/menos.png';
-import mas from './img/mas.png';
-import carrito from './img/carrito.png';
+import menos from '../../img/menos.png';
+import mas from '../../img/mas.png';
+import carrito from '../../img/carrito.png';
 
 import { CartContext } from '../../context/CartContext';
 

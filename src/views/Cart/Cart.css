@@ -1,0 +1,9 @@
+table tbody img.cartTable__img{
+    width: 50px;
+    height: auto;
+}
+
+table tbody td button img.cartTable__btnBorrar{
+    width: 30px;
+    height: auto;
+}

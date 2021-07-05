@@ -38,7 +38,7 @@ function ItemDetail( {item}) {
 
     <div className="container">
         {item.detail}
-         <Link to={`/`}>
+         <Link to={`/`} style={{textDecoration : 'none'}}>
            <p className="mt-5">volver</p> 
          </Link>    
     </div>

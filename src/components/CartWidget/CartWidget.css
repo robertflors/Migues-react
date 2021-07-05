@@ -1,0 +1,14 @@
+img#cartWidget {
+    margin-left: 50%;
+}
+
+div#cartWidgetContainer { 
+    display: flex;
+    flex-direction: row;
+}
+
+div#cartWidgetContainer p.cartWidget__acum{
+    text-decoration: none;
+    color: rgb(194, 26, 26);
+    font-weight: bold;
+}

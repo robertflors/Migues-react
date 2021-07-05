@@ -18,7 +18,7 @@ import React, {useState , createContext} from 'react';
             //  caso contrario lo pusheamos al estado
             const newCart = [...cart];
             newCart.push({item: nuevoItem , quantity: cant});
-            //hacer pruebas en caso que haya problemas con el estado
+           
             setCart(newCart);     
             console.log('carrito' , cart);
          
