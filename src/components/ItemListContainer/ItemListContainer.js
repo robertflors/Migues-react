@@ -1,17 +1,26 @@
 import React, {useEffect, useState} from 'react';
 import './ItemListContainer.css';
 import ItemList from '../ItemList/ItemList';
-import axios from 'axios';
+import { db } from '../../Firebase/Firebase';
 
 function ItemListContainer(prop) {
     const [productos, setProductos] = useState([]);
 
+    const obtenerProductos = () => {
+        db.collection('productos').onSnapshot((querySnapshot) => {
+            const docs = [];
+            querySnapshot.forEach((doc) => {
+            docs.push({ ...doc.data(), id: doc.id })
+            });
+        setProductos(docs);
+        console.log(productos); 
+        });
+    }
+
     useEffect(() => {
-        setTimeout(()=>{
-            axios('json/Detail.json')
-           .then(respuesta => setProductos(respuesta.data));    
-        }, 2000);     
+        obtenerProductos();            
     }, []);
+
     return (
         <div>
             <h1>{prop.greeting}</h1>
