@@ -1,14 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import ItemList from '../../components/ItemList/ItemList';
+import { db } from '../../Firebase/Firebase';
 
 function Category( {match} ) {
     let categoryId = match.params.categoryId;
     const [category, setCategory] = useState([]);
 
+    const obtenerProductos = () => {
+        db.collection('productos').onSnapshot((querySnapshot) => {
+            const docs = [];
+            querySnapshot.forEach((doc) => {
+            docs.push({ ...doc.data(), id: doc.id })
+            });
+        setCategory(docs);
+        });
+    }
     useEffect(() => {
-            axios('../json/Detail.json')
-           .then(respuesta => setCategory(respuesta.data));    
+        obtenerProductos();            
     }, []);
 
     let categoriaSeleccionada = category.filter(item => item.category === categoryId);
