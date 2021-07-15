@@ -4,11 +4,28 @@ import { Link } from 'react-router-dom';
 import {Table} from 'react-bootstrap';
 import './Cart.css'
 import papelera from '../../img/papelera.png';
+import OrderForm from '../../components/OrderForm/OrderForm';
+import {db} from '../../Firebase/Firebase';
 
 
 function Cart() {
 const {cart, clear, removeItem} = useContext(CartContext);
 
+// const [orderId, setOrderId] = useState('');
+
+// const addOrder = async (object) => {
+//     await db.collection('órdenes').doc().set(object);
+//     console.log('producto agregado');
+//     clear();
+// }
+const addOrder = (object) => {
+    db.collection('órdenes').add(object).then(({id}) =>{
+        // setOrderId(id);
+        clear();
+        alert(`gracias por tu compra, tu número de orden es ${id}`)
+    });
+
+}
 return (
 <div>
     <h2>Carrito</h2>
@@ -40,6 +57,7 @@ return (
         </tbody>
     </Table>
     <button className="btn btn-danger" onClick={()=>clear()}>Eliminar todo</button> 
+    <OrderForm addOrder={addOrder} cart={cart} />
     </div> 
     :
     <>
