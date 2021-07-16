@@ -20,11 +20,6 @@ function ItemDetailContainer( { match }) {
         obtenerProductos();            
     }, []);
 
-    // useEffect(() => {
-    //         axios('../json/Detail.json')
-    //        .then(respuesta => setItems(respuesta.data));    
-    // }, []);
-
     let itemDetallado = items.filter(item => item.id === itemID);
 
     return (
