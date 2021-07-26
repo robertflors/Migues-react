@@ -13,7 +13,6 @@ function ItemListContainer(prop) {
             docs.push({ ...doc.data(), id: doc.id })
             });
         setProductos(docs);
-        console.log(productos); 
         });
     }
 

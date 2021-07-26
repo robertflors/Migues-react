@@ -13,12 +13,12 @@ return (
         <Card.Body>
             <Card.Title>{item.title}</Card.Title>
             <Card.Text>
-                {item.description}                             
+                {item.description}                     
             </Card.Text>
+                <p>precio : {item.price}</p>
                 <Link to={`/detalles/${item.id}`}>
                     <button className="btn botonInfo">+ info</button>
-                </Link>    
-            <p>{item.price}</p>
+                </Link>              
             
         </Card.Body>
     </Card>

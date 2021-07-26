@@ -7,7 +7,7 @@ import './ItemList.css'
 function ItemList( {productos} ) {
     
     return (
-        <div className="itemList">
+        <div className="itemList container-fluid">
             {productos.map((item) => {
                 return (<div key={item.id}>
                         

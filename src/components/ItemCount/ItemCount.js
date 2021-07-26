@@ -8,7 +8,7 @@ import carrito from '../../img/carrito.png';
 import { CartContext } from '../../context/CartContext';
 
 
-function ItemCount({stock, onAdd, item}) {
+function ItemCount({stock, onAdd, item, id}) {
     const [cant, setCant] = useState(1);
     const contexto = useContext(CartContext);
 
@@ -21,12 +21,12 @@ function ItemCount({stock, onAdd, item}) {
     }
 
     const agregarAlCarrito = (cant) => {
-        contexto.addItem(item , cant);
+        contexto.addItem(item , cant, id);
     }
 
 
     return (
-        <div>
+        <div className="container d-flex flex-column align-items-center">
             <p>{cant}</p>
             <div className="agrupacionBotonesCompras">
                 {/* botón de menos */}

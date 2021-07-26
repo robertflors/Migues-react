@@ -6,15 +6,12 @@ import { CartContext } from '../../context/CartContext';
 
 
 function CartWidget() {
-const contexto = useContext(CartContext);
+const {cart} = useContext(CartContext)
 
 let acum = 0;
 
-if (contexto.cart.length > 0 && contexto.cart.length < 2){  
-    acum = contexto.cart[0].quantity;
-
-} else if (contexto.cart.length > 0){    
-    acum = contexto.cart.reduce((a,b)=> a.quantity + b.quantity);
+for (let item of cart) {
+    acum += item.quantity;
 }
 
 return (

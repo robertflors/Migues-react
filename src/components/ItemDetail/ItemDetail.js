@@ -7,7 +7,7 @@ import '../Item/Item.css';
 
 
 
-function ItemDetail( {item}) {
+function ItemDetail( {item, id} ) {
 
         const [cant, setCant] = useState(0);
 
@@ -20,24 +20,27 @@ function ItemDetail( {item}) {
             <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={item.pictureUrl} />
         <Card.Body>
-            <Card.Title>{item.title}</Card.Title>
-            <Card.Text>
-                {item.description}                             
-            </Card.Text>   
-            <p>{item.price}</p>           
+            <Card.Title>{item.title}</Card.Title> 
+            <p>precio: {item.price}</p> 
+            <p className="itemCard__stock">stock: {item.stock}</p>          
             
-        </Card.Body>
-        {cant === 0 ? 
-            <ItemCount stock={item.stock} item={item} onAdd={onAdd}/>
-        :   <Link to={'/cart'}>
-                <button className="btn botonInfo">finalizar compra ({cant} {item.title})</button>         
-            </Link> }
+        </Card.Body>      
        
-
     </Card>
 
     <div className="container">
         {item.detail}
+        <div className="container mt-5">
+        {cant === 0 ? 
+            <ItemCount stock={item.stock} item={item} onAdd={onAdd} id={id}/>
+        :   <>
+            <ItemCount stock={item.stock} item={item} onAdd={onAdd} id={id}/>
+            <Link to={'/cart'}>
+                <button className="btn botonInfo">finalizar compra ({cant} {item.title})</button>         
+            </Link> 
+            </>} 
+        </div>
+       
          <Link to={`/`} style={{textDecoration : 'none'}}>
            <p className="mt-5">volver</p> 
          </Link>    

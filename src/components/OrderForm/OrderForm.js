@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Form, Button, Modal } from 'react-bootstrap';
 import firebase from "firebase/app";
 import 'firebase/firestore';
 
-function OrderForm({ addOrder, cart }) {
+function OrderForm({ addOrder, cart, total }) {
     // MODAL DE REACT-BOOTSTRAP
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -18,6 +18,11 @@ function OrderForm({ addOrder, cart }) {
     }
     // LA FECHA EN LA CUAL FUE HECHA LA COMPRA
     const date = firebase.firestore.Timestamp.fromDate(new Date());
+
+    // fecha para vista del usuario
+    let today = new Date();
+    const fecha = `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
+
     // EN ESTA PARTE MANEJAMOS LOS DATOS INGRESADOS POR EL USUARIO EN EL FORMULARIO DE COMPRA
     const [buyer, setBuyer] = useState(initialBuyer);
 
@@ -27,7 +32,7 @@ function OrderForm({ addOrder, cart }) {
     }
     const handleOnSubmit = (e) => {
         e.preventDefault();
-        const newOrder = {buyer, items:cart, date};
+        const newOrder = {buyer, items:cart, date, total:total};
         addOrder(newOrder);
     }
 
@@ -61,9 +66,14 @@ function OrderForm({ addOrder, cart }) {
                             </Form.Text>
                         </Form.Group>
 
-                        <Form.Group hidden>
+                        <Form.Group>
                             <Form.Label>Fecha</Form.Label>
-                            <Form.Control type="text" placeholder='fecha' readOnly />
+                            <Form.Control type="text" placeholder={fecha} readOnly />
+                        </Form.Group>
+
+                        <Form.Group>
+                            <Form.Label>Total</Form.Label>
+                            <Form.Control type="text" placeholder={total} readOnly />
                         </Form.Group>
 
                         <Button variant="primary" type="submit" >

@@ -4,7 +4,7 @@ import ItemListContainer from '../../components/ItemListContainer/ItemListContai
 function Home() {
     return (
         <div>
-            <ItemListContainer greeting="Hola, estos son los productos:" />
+            <ItemListContainer greeting="Productos:" />
         </div>
     )
 }
