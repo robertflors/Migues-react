@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Form, Button, Modal } from 'react-bootstrap';
 import firebase from "firebase/app";
 import 'firebase/firestore';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 function OrderForm({ addOrder, cart, total }) {
     // MODAL DE REACT-BOOTSTRAP
@@ -10,12 +12,33 @@ function OrderForm({ addOrder, cart, total }) {
     const handleShow = () => setShow(true);
     // FIN MODAL REACT-BOOTSTRAP
 
+    // VALIDACIÓN DEL FORMULARIO CON FORMIK Y YUP
+    const formik = useFormik({
+        initialValues: {
+            nombre: '',
+            email: '',
+            telefono: ''
+        },
+
+        validationSchema: Yup.object({
+            nombre: Yup.string().required('campo obligatorio'),
+            email: Yup.string().email('ingresa un email válido').required('campo obligatorio'),
+            telefono: Yup.string().required('campo obligatorio')
+        }),
+
+        onSubmit: (buyer) => {
+            const newOrder = {buyer:buyer, items:cart, date, total:total};
+            addOrder(newOrder);
+
+        }
+    })
+
     // UN INICIADOR PARA EL ESTADO BUYER, CUYO VALOR SALDRÁ DEL FORM
-    const initialBuyer = {
-        nombre: '',
-        email: '',
-        telefono: '',
-    }
+    // const initialBuyer = {
+    //     nombre: '',
+    //     email: '',
+    //     telefono: '',
+    // }
     // LA FECHA EN LA CUAL FUE HECHA LA COMPRA
     const date = firebase.firestore.Timestamp.fromDate(new Date());
 
@@ -24,17 +47,17 @@ function OrderForm({ addOrder, cart, total }) {
     const fecha = `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
 
     // EN ESTA PARTE MANEJAMOS LOS DATOS INGRESADOS POR EL USUARIO EN EL FORMULARIO DE COMPRA
-    const [buyer, setBuyer] = useState(initialBuyer);
+    // const [buyer, setBuyer] = useState(initialBuyer);
 
-    const handleOnChange = (e) => {
-        const { name, value } = e.target;
-        setBuyer({ ...buyer, [name]: value });
-    }
-    const handleOnSubmit = (e) => {
-        e.preventDefault();
-        const newOrder = {buyer, items:cart, date, total:total};
-        addOrder(newOrder);
-    }
+    // const handleOnChange = (e) => {
+    //     const { name, value } = e.target;
+    //     setBuyer({ ...buyer, [name]: value });
+    // }
+    // const handleOnSubmit = (e) => {
+    //     e.preventDefault();
+    //     // const newOrder = {buyer, items:cart, date, total:total};
+    //     // addOrder(newOrder);
+    // }
 
     return (
         <>
@@ -43,24 +66,29 @@ function OrderForm({ addOrder, cart, total }) {
             </Button>
 
             <Modal show={show} onHide={handleClose}>
+
                 <Modal.Header closeButton>
                     <Modal.Title>Formulario de compra</Modal.Title>
                 </Modal.Header>
+
                 <Modal.Body>
-                    <Form onSubmit={handleOnSubmit}>
+
+                    {/* -------------------------------------------------------FORMULARIO DENTRO DEL MODAL------------------------------------------------------------------ */}
+                    <Form onSubmit={formik.handleSubmit}>
+                        
                         <Form.Group className="mb-3" controlId="formBasicText">
                             <Form.Label>Nombre</Form.Label>
-                            <Form.Control type="text" placeholder="Nombre Apellido" name='nombre' value={buyer.nombre} onChange={handleOnChange} />
+                            <Form.Control type="text" placeholder="Nombre Apellido" name='nombre' onChange={formik.handleChange} error={formik.errors.nombre}/>
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email</Form.Label>
-                            <Form.Control type="email" placeholder="nombre@example.com" name='email' value={buyer.email} onChange={handleOnChange} />
+                            <Form.Control type="text" placeholder="nombre@example.com" name='email' onChange={formik.handleChange} error={formik.errors.email}/>
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicNumber">
                             <Form.Label>Teléfono</Form.Label>
-                            <Form.Control type="text" placeholder="teléfono" name='telefono' value={buyer.telefono} onChange={handleOnChange} />
+                            <Form.Control type="text" placeholder="teléfono" name='telefono' onChange={formik.handleChange} error={formik.errors.telefono}/>
                             <Form.Text className="text-muted">
                                 incluir el código telefónico correspondiente.
                             </Form.Text>
@@ -76,7 +104,7 @@ function OrderForm({ addOrder, cart, total }) {
                             <Form.Control type="text" placeholder={total} readOnly />
                         </Form.Group>
 
-                        <Button variant="primary" type="submit" >
+                        <Button variant="dark" type="submit">
                             Finalizar Compra
                         </Button>
                     </Form>

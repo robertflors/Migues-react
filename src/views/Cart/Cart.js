@@ -6,6 +6,7 @@ import './Cart.css'
 import papelera from '../../img/papelera.png';
 import OrderForm from '../../components/OrderForm/OrderForm';
 import { db } from '../../Firebase/Firebase';
+// import {OrderToast} from '../../components/OrderToast/OrderToast';
 
 
 function Cart() {
@@ -14,8 +15,8 @@ function Cart() {
     const addOrder = async (object) => {
         const { id } = await db.collection('ordenes').add(object)
         clear()
-        console.log(id);
         alert(`gracias por tu compra, tu número de orden es ${id}`)
+
     }
     
     const totalCompra = cart.length>0 ? cart.map(obj =>obj.item.price * obj.quantity).reduce((a, b) => a + b) : undefined;
