@@ -30,7 +30,7 @@ que has seleccionado hasta el momento y podrás proceder a comprarlos, al darle 
 ingresarás los datos del comprador y al aceptar se te informará del número de orden generado y todos la información de la compra irá
 a una base de datos en firebase.
 
-*[Navegando por la aplicación. GIF](https://firebasestorage.googleapis.com/v0/b/migues-react-8960d.appspot.com/o/2021-07-27_23h44_22.gif?alt=media&token=cf700b03-a238-4ec5-8c8d-019292443c62 =400x400)
+![Navegando por la aplicación. GIF](https://firebasestorage.googleapis.com/v0/b/migues-react-8960d.appspot.com/o/2021-07-27_23h44_22.gif?alt=media&token=cf700b03-a238-4ec5-8c8d-019292443c62.gif =400x400)
 
 ## Construido con 🛠️
 
