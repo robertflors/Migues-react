@@ -33,31 +33,12 @@ function OrderForm({ addOrder, cart, total }) {
         }
     })
 
-    // UN INICIADOR PARA EL ESTADO BUYER, CUYO VALOR SALDRÁ DEL FORM
-    // const initialBuyer = {
-    //     nombre: '',
-    //     email: '',
-    //     telefono: '',
-    // }
     // LA FECHA EN LA CUAL FUE HECHA LA COMPRA
     const date = firebase.firestore.Timestamp.fromDate(new Date());
 
     // fecha para vista del usuario
     let today = new Date();
     const fecha = `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
-
-    // EN ESTA PARTE MANEJAMOS LOS DATOS INGRESADOS POR EL USUARIO EN EL FORMULARIO DE COMPRA
-    // const [buyer, setBuyer] = useState(initialBuyer);
-
-    // const handleOnChange = (e) => {
-    //     const { name, value } = e.target;
-    //     setBuyer({ ...buyer, [name]: value });
-    // }
-    // const handleOnSubmit = (e) => {
-    //     e.preventDefault();
-    //     // const newOrder = {buyer, items:cart, date, total:total};
-    //     // addOrder(newOrder);
-    // }
 
     return (
         <>

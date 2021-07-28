@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { Link } from 'react-router-dom';
 import { Table } from 'react-bootstrap';
@@ -6,17 +6,21 @@ import './Cart.css'
 import papelera from '../../img/papelera.png';
 import OrderForm from '../../components/OrderForm/OrderForm';
 import { db } from '../../Firebase/Firebase';
-// import {OrderToast} from '../../components/OrderToast/OrderToast';
+import OrderAlert from '../../components/OrderAlert/OrderAlert';
 
 
 function Cart() {
     const { cart, clear, removeItem } = useContext(CartContext);
-
+    // para guardar el id dinámico de la orden de compra
+    const [orderID, setOrderID] = useState('');
+    // para renderizar el Alert que aparecerá con el id de compra
+    const [successfulOrder, setSuccessfulOrder] = useState(false);
+    
     const addOrder = async (object) => {
-        const { id } = await db.collection('ordenes').add(object)
-        clear()
-        alert(`gracias por tu compra, tu número de orden es ${id}`)
-
+        const { id } = await db.collection('ordenes').add(object);
+        clear();
+        setOrderID(id);
+        setSuccessfulOrder(true);      
     }
     
     const totalCompra = cart.length>0 ? cart.map(obj =>obj.item.price * obj.quantity).reduce((a, b) => a + b) : undefined;
@@ -63,6 +67,7 @@ function Cart() {
                 :
                 <>
                     <h4>Tu carrito está vacío</h4>
+                    <div id="orderToast">{successfulOrder ? <OrderAlert id={orderID}/> : null }</div>                    
                     <Link to='/' style={{ textDecoration: 'none' }}>
                         volver
                     </Link>

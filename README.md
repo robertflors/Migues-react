@@ -30,15 +30,17 @@ que has seleccionado hasta el momento y podrás proceder a comprarlos, al darle 
 ingresarás los datos del comprador y al aceptar se te informará del número de orden generado y todos la información de la compra irá
 a una base de datos en firebase.
 
+![Gif de la navegación por la aplicación](https://firebasestorage.googleapis.com/v0/b/migues-react-8960d.appspot.com/o/2021-07-27_23h44_22.gif?alt=media&token=cf700b03-a238-4ec5-8c8d-019292443c62 =400x400)
+
 ## Construido con 🛠️
 
-*React -  El framework web
-*[Bootstrap]() - librería css para facilitar los estilos y el diseño responsive
-*[React Bootstrap](https://react-bootstrap.github.io/) - librería css para los estilos y diseño responsive a través de componentes.
-*[Formik](https://formik.org/) - para validaciones de formulario.
-*[Yup](https://www.npmjs.com/package/yup) - para validaciones de formulario.
-*[Firebase](https://firebase.google.com/?hl=es-419&gclid=EAIaIQobChMIvb7s7NCB8gIVEv7jBx0sUwctEAAYASAAEgJLyfD_BwE&gclsrc=aw.ds) - para base de datos.
-*[React-Router](https://reactrouter.com/web/guides/quick-start) - para la navegabilidad SPA en la app.
+* React -  El framework web
+* [Bootstrap]() - librería css para facilitar los estilos y el diseño responsive
+* [React Bootstrap](https://react-bootstrap.github.io/) - librería css para los estilos y diseño responsive a través de componentes.
+* [Formik](https://formik.org/) - para validaciones de formulario.
+* [Yup](https://www.npmjs.com/package/yup) - para validaciones de formulario.
+* [Firebase](https://firebase.google.com/?hl=es-419&gclid=EAIaIQobChMIvb7s7NCB8gIVEv7jBx0sUwctEAAYASAAEgJLyfD_BwE&gclsrc=aw.ds) - para base de datos.
+* [React-Router](https://reactrouter.com/web/guides/quick-start) - para la navegabilidad SPA en la app.
 
 
 

@@ -7,3 +7,7 @@ table tbody td button img.cartTable__btnBorrar{
     width: 30px;
     height: auto;
 }
+
+div#orderToast{
+    margin: 0 auto;
+}
