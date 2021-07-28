@@ -32,8 +32,6 @@ a una base de datos en firebase.
 
 *[Navegando por la aplicaión, gif](https://firebasestorage.googleapis.com/v0/b/migues-react-8960d.appspot.com/o/2021-07-27_23h44_22.gif?alt=media&token=cf700b03-a238-4ec5-8c8d-019292443c62)
 
-<img src="https://firebasestorage.googleapis.com/v0/b/migues-react-8960d.appspot.com/o/2021-07-27_23h44_22.gif?alt=media&token=cf700b03-a238-4ec5-8c8d-019292443c62" alt="navegando por la app" width="400" height="450">
-
 ## Construido con 🛠️
 
 * React -  El framework web
